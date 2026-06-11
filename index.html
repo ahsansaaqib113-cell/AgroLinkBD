@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroLink BD | Connecting Farmers Directly to Consumers</title>
+  <meta name="description" content="AgroLink BD is a digital marketplace connecting Bangladeshi farmers directly with consumers for fresh, organic, and fair-priced produce.">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <div class="navbar">
+      <a href="#home" class="logo" id="navLogo">
+        <!-- Modern leaf/agriculture SVG logo -->
+        <svg viewBox="0 0 24 24">
+          <path d="M17 8C8 10 5.9 16.1 5 21c4.9-.9 11-3 13-12 .8-3.6-.2-6.5-1-1zm-4.7 9c-1.3-.1-2.9-1.2-2.9-2.9 0-2 2-3.1 3.9-3.1 1.7 0 2.9 1.4 2.9 2.9-.1 1.9-1.9 3.1-3.9 3.1z"/>
+        </svg>
+        AgroLink<span>BD</span>
+      </a>
+
+      <!-- Desktop Navigation links -->
+      <nav>
+        <ul class="nav-links" id="desktopNav">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#products" class="nav-link">Products</a></li>
+          <li><a href="#farmers" class="nav-link">Farmers</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action buttons (Cart, Mobile Toggle) -->
+      <div class="nav-actions">
+        <button class="cart-btn" id="cartToggle" aria-label="Open Shopping Cart">
+          <svg fill="currentColor" viewBox="0 0 20 20">
+            <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 100-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
+          </svg>
+          <span class="cart-count" id="cartCount" style="display: none;">0</span>
+        </button>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div id="mobileNav"></div>
+
+  <!-- MAIN APP WRAPPER -->
+  <main>
+
+    <!-- ==================== HOME PAGE VIEW ==================== -->
+    <section id="home-view" class="page-view active">
+      <!-- HERO BANNER -->
+      <div class="hero">
+        <div class="hero-content">
+          <h1>Connecting Farmers Directly to Consumers</h1>
+          <p>Skip the middlemen. Get fresh, premium-quality produce harvested directly from Bangladeshi farms and delivered straight to your doorstep.</p>
+          <div class="hero-btns">
+            <a href="#products" class="btn btn-primary">Shop Fresh Produce</a>
+            <a href="#farmers" class="btn btn-secondary">Meet Our Farmers</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- KEY FEATURES SECTION -->
+      <div class="container">
+        <div class="section-header">
+          <h2>Why Choose AgroLink BD?</h2>
+          <p>Supporting local agriculture while delivering the freshest food to your home.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+              </svg>
+            </div>
+            <h3>Direct Trade</h3>
+            <p>We eliminate intermediaries. Farmers receive fair compensation, and consumers get competitive prices.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+            </div>
+            <h3>100% Fresh & Pure</h3>
+            <p>Every product listed is freshly harvested and undergoes quality checks for pesticide-free standards.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 12H9v-2h6v2zm3-4H6V8h12v4z"/>
+              </svg>
+            </div>
+            <h3>Community First</h3>
+            <p>A percentage of all proceeds helps fund green technology and sustainable irrigation for small Bangladeshi farms.</p>
+          </div>
+        </div>
+
+        <!-- FEATURED PRODUCTS BANNER -->
+        <div class="featured-section">
+          <div class="section-header">
+            <h2>Featured Products</h2>
+            <p>Fresh picks highly rated by our community this week.</p>
+          </div>
+          <div class="featured-grid" id="featuredGrid">
+            <!-- Dynamically populated via JS -->
+          </div>
+          <div style="text-align: center; margin-top: 2.5rem;">
+            <a href="#products" class="btn btn-primary">View All Products</a>
+          </div>
+        </div>
+
+        <!-- ABOUT SECTION -->
+        <div class="about-section" id="about-us">
+          <div class="about-container">
+            <div class="about-graphic">
+              <div class="about-visual-badge">
+                <h3>AgroLink</h3>
+                <p>Empowering Local Farmers Since 2026</p>
+              </div>
+            </div>
+            <div class="about-content">
+              <h3>Empowering Bangladeshi Farmers, Nourishing Communities</h3>
+              <p>AgroLink BD was founded with a simple vision: to bridge the gap between hard-working rural farmers and urban consumers. Traditional agricultural supply chains in Bangladesh often leave farmers with minimal profits due to brokers, while consumers pay premium prices for stored goods.</p>
+              <p>Our platform enables direct farm-to-table delivery, ensuring transparency, maximum freshness, and higher profit margins for smallholder agricultural communities.</p>
+              
+              <div class="about-stats">
+                <div class="stat-item">
+                  <h4>150+</h4>
+                  <p>Registered Farmers</p>
+                </div>
+                <div class="stat-item">
+                  <h4>5,000+</h4>
+                  <p>Happy Customers</p>
+                </div>
+                <div class="stat-item">
+                  <h4>12+</h4>
+                  <p>Districts Covered</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PRODUCTS PAGE VIEW ==================== -->
+    <section id="products-view" class="page-view">
+      <div class="section-header">
+        <h2>Fresh Farm Directory</h2>
+        <p>Explore pesticide-free fruits, vegetables, grains, poultry, and organic honey.</p>
+      </div>
+
+      <div class="products-layout">
+        <!-- Filtering Sidebar -->
+        <aside class="filters-sidebar">
+          <div class="filter-group">
+            <h4>Search</h4>
+            <div class="search-box">
+              <svg fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+              </svg>
+              <input type="text" id="productSearch" placeholder="Search product or farmer...">
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h4>Categories</h4>
+            <div class="filter-btn-group">
+              <button class="filter-btn active" data-category="all">All Categories</button>
+              <button class="filter-btn" data-category="vegetables">Vegetables</button>
+              <button class="filter-btn" data-category="fruits">Fruits</button>
+              <button class="filter-btn" data-category="honey">Organic Honey</button>
+              <button class="filter-btn" data-category="poultry">Poultry & Eggs</button>
+              <button class="filter-btn" data-category="grains">Grains & Rice</button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Products List Grid -->
+        <div class="products-content">
+          <div class="products-grid" id="productsGrid">
+            <!-- Dynamically populated via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FARMERS PAGE VIEW ==================== -->
+    <section id="farmers-view" class="page-view">
+      <div class="section-header">
+        <h2>Our Agricultural Heroes</h2>
+        <p>Meet the dedicated growers supplying fresh produce across Bangladesh.</p>
+      </div>
+      <div class="farmers-grid" id="farmersGrid">
+        <!-- Dynamically populated via JS -->
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT PAGE VIEW ==================== -->
+    <section id="contact-view" class="page-view">
+      <div class="section-header">
+        <h2>Contact AgroLink BD</h2>
+        <p>We are here to answer questions, handle custom logistics, and assist vendors.</p>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Left Column: Contact details -->
+        <div class="contact-info-cards">
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="24" height="24">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+              </svg>
+            </div>
+            <div class="contact-card-info">
+              <h4>Email Support</h4>
+              <p>For support, orders, or vendor registrations:</p>
+              <a href="mailto:info@agrolink.bd">info@agrolink.bd</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="24" height="24">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+              </svg>
+            </div>
+            <div class="contact-card-info">
+              <h4>Phone Support</h4>
+              <p>Available Saturday to Thursday, 9 AM - 6 PM:</p>
+              <a href="tel:+8809612345678">+880 9612-345678</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="24" height="24">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div class="contact-card-info">
+              <h4>Headquarters</h4>
+              <p>AgroLink BD HQ<br>12 Karwan Bazar Road,<br>Dhaka 1215, Bangladesh</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Form -->
+        <div class="contact-form-container">
+          <h3>Send Us a Message</h3>
+          <form id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="contactName">Full Name</label>
+              <input type="text" id="contactName" placeholder="Your Name">
+              <div class="form-error" id="contactNameError"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="contactEmail">Email Address</label>
+              <input type="email" id="contactEmail" placeholder="name@example.com">
+              <div class="form-error" id="contactEmailError"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="contactPhone">Phone Number</label>
+              <input type="tel" id="contactPhone" placeholder="017XXXXXXXX">
+              <div class="form-error" id="contactPhoneError"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" placeholder="Write your inquiry or feedback here..."></textarea>
+              <div class="form-error" id="contactMessageError"></div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== SHOPPING CART DRAWER ==================== -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h3>
+        <svg viewBox="0 0 20 20" fill="currentColor" width="22" height="22">
+          <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 100-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3z"></path>
+        </svg>
+        Shopping Cart
+      </h3>
+      <button class="btn-close-cart" id="closeCart" aria-label="Close cart menu">
+        <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
+          <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Cart items list (rendered by JS) -->
+    <div class="cart-drawer-items" id="cartItems">
+      <!-- Dynamically populated via JS -->
+    </div>
+
+    <!-- Cart total & actions -->
+    <div class="cart-drawer-footer">
+      <div class="cart-total-row">
+        <span>Subtotal:</span>
+        <span id="cartTotalVal">৳0</span>
+      </div>
+      <button class="btn btn-primary" id="checkoutBtn" disabled>Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>AgroLink<span>BD</span></h3>
+        <p>Connecting Bangladeshi farmers directly to urban consumers, establishing fair trade and delivering maximum freshness.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg fill="currentColor" viewBox="0 0 24 24" width="18" height="18">
+              <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter">
+            <svg fill="currentColor" viewBox="0 0 24 24" width="18" height="18">
+              <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube">
+            <svg fill="currentColor" viewBox="0 0 24 24" width="18" height="18">
+              <path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.507a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.87.507 9.388.507 9.388.507s7.518 0 9.388-.507a3.003 3.003 0 002.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#farmers">Farmers Directory</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#products">Fresh Vegetables</a></li>
+          <li><a href="#products">Seasonal Fruits</a></li>
+          <li><a href="#products">Premium Grains</a></li>
+          <li><a href="#products">Pure Honey</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Help & Support</h4>
+        <ul>
+          <li><a href="#contact">Farmer Registration</a></li>
+          <li><a href="#contact">Shipping & Delivery</a></li>
+          <li><a href="#contact">FAQs</a></li>
+          <li><a href="#contact">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-copyright">
+      &copy; 2026 AgroLink BD. All rights reserved. Designed for sustainable agriculture.
+    </div>
+  </footer>
+
+  <!-- Additional mobile menu overlay scripting -->
+  <script>
+    // Handle inline mobile nav creation to duplicate links
+    const desktopLinks = document.getElementById('desktopNav').innerHTML;
+    const mobileNav = document.getElementById('mobileNav');
+    mobileNav.innerHTML = `<ul style="list-style:none; display:flex; flex-direction:column; gap:1.5rem; text-align:center;">${desktopLinks}</ul>`;
+  </script>
+  
+  <script src="app.js"></script>
+
+
+
+</body>
+</html>
